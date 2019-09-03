@@ -1,6 +1,7 @@
 package main
 
 import (
+	"encoding/base64"
 	"log"
 	"os"
 	"text/template"
@@ -18,7 +19,8 @@ func main() {
 	secret.Name = os.Args[1]
 	secret.Secrets = make(map[string]string)
 	for i := 2; i < len(os.Args); i += 2 {
-		secret.Secrets[os.Args[i]] = os.Args[i+1]
+		val := base64.StdEncoding.EncodeToString([]byte(os.Args[i+1]))
+		secret.Secrets[os.Args[i]] = val
 	}
 
 	err = tmpl.Execute(os.Stdout, secret)

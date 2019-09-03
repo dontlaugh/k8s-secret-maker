@@ -1,1 +1,4 @@
 k8s-secret-maker
+# don't check in any secrets you generate
+*.yml
+*.yaml
