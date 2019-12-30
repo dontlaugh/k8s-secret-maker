@@ -14,7 +14,7 @@ k8s-secret-maker SECRETNAME secretkey1 secretvalue1 secretkey2 secretvalue2 ...
 You need Go installed, and you need GOPATH/bin on your PATH.
 
 ```
-go install -u github.com/dontlaugh/k8s-secret-maker
+go get -u github.com/dontlaugh/k8s-secret-maker
 ```
 
 Check your environment with `go env`.
